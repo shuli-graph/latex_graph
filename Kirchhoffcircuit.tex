@@ -1,0 +1,88 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{circuitikz}
+\begin{document}
+
+\begin{circuitikz}[scale=1.6]
+\draw[thick] (0,-1) 
+    to[R,*-] (1.5,-1)
+    to[L,*-] (1.5,0)
+    to[R,*-] (0,0) 
+    to[L,*-] (0,-1)
+    to[R,*-] (-1.5,-1)
+    to[L,*-] (-1.5,0)
+    to[R,*-] (0,0);
+
+\draw[thick] (-1.5,0)
+   to[L,*-] (-1.5,1)
+   to[C](1.5,1)
+   to[L,*-] (1.5,0);
+
+\node (1) at (0,-1.5) {$N$};
+\node (2) at (3.5,-1.5) {$D:$};
+\node (2) at (7,-1.5) {$T$};
+
+\node[circle,fill,inner sep=0.5mm] (v1) at (3.5,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v2) at (2,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v3) at (2,0) {};
+\node[circle,fill,inner sep=0.5mm] (v4) at (2,1) {};
+\node[circle,fill,inner sep=0.5mm] (v5) at (5,1) {};
+\node[circle,fill,inner sep=0.5mm] (v6) at (5,0) {};
+\node[circle,fill,inner sep=0.5mm] (v7) at (5,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v8) at (3.5,0) {};
+\draw[thick]  (v1) -- (v2) -- (v3) -- (v4) -- (v5) -- (v6) -- (v7) -- (v1) -- (v8) -- (v3);
+\draw[thick]  (v6) -- (v8);
+
+\node[circle,fill,inner sep=0.5mm] (v11) at (7,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v12) at (5.5,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v13) at (5.5,0) {};
+\node[circle,fill,inner sep=0.5mm] (v14) at (5.5,1) {};
+\node[circle,fill,inner sep=0.5mm] (v15) at (8.5,1) {};
+\node[circle,fill,inner sep=0.5mm] (v16) at (8.5,0) {};
+\node[circle,fill,inner sep=0.5mm] (v17) at (8.5,-1) {};
+\node[circle,fill,inner sep=0.5mm] (v18) at (7,0) {};
+\draw[thick] (v11) -- (v12);
+\draw[thick] (v13) -- (v14) -- (v15);
+\draw[thick] (v17) -- (v11) -- (v18) -- (v13);
+\draw[thick] (v16) -- (v18);
+\end{circuitikz}
+
+%\begin{tikzpicture}[scale=1.6, inner sep=0.5mm, place/.style={circle,draw,fill}]
+%\draw[thick] (2,1) arc (45:135:2.82);
+%\node[place] (v1) at (0,1) {};
+%\node[place] (v2) at (-2,1) {};
+%\node[place] (v3) at (2,1) {};
+%\node[place] (v4) at (0,0) {};
+%\node[place] (v5) at (-2,0) {};
+%\node[place] (v6) at (2,0) {};
+%
+%\draw[thick]  (v1) edge (v2);
+%\draw[thick]  (v2) edge (v5);
+%\draw[thick]  (v1) edge (v3);
+%\draw[thick]  (v4) edge (v5);
+%\draw[thick]  (v4) edge (v6);
+%\draw[thick]  (v6) edge (v3);
+%\draw[thick]  (v4) edge (v1);
+%\node (1) at (-2.5,0.5) {$D:$};
+%
+%
+%\node[place] (v11) at (6,1) {};
+%\node[place] (v12) at (4,1) {};
+%\node[place] (v13) at (8,1) {};
+%\node[place] (v14) at (6,0) {};
+%\node[place] (v15) at (4,0) {};
+%\node[place] (v16) at (8,0) {};
+%\node (2) at (3.5,0.5) {$T:$};
+%\draw[thick]  (v11) edge (v12);
+%\draw[thick]  (v12) edge (v15);
+%\draw[thick]  (v11) edge (v13);
+%%\draw  (v4) edge (v5);
+%\draw[thick]  (v14) edge (v16);
+%\draw[thick]  (v16) edge (v13);
+%\draw[thick]  (v14) edge (v11);
+%
+%\node (3) at (9,0.5) {};
+%\end{tikzpicture}
+
+\end{document}
